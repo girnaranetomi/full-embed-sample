@@ -7,7 +7,6 @@ const basicAuth = auth.basic({realm: "Private Area"}, (username, password, callb
 });
 
 export default app => {
-  app.listen(process.env.PORT || 3000);
   if (process.env.USER_NAME && process.env.USER_PASSWORD) {
     app.use(auth.connect(basicAuth));
   }
